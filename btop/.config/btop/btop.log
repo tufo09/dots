@@ -1,3 +1,9 @@
 
 2024/12/19 (18:15:45) | ===> btop++ v.1.4.0
 2024/12/19 (18:15:45) | WARNING: Failed to get disk/partition stats for mount "/media/nas" with statvfs error code: 112. Ignoring...
+
+2025/02/06 (16:22:22) | ===> btop++ v.1.4.0
+2025/02/06 (16:22:22) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/02/06 (16:46:04) | ===> btop++ v.1.4.0
+2025/02/06 (16:46:04) | WARNING: Intel GPU: Failed to initialize PMU
