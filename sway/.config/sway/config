@@ -52,12 +52,12 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 input * {
     xkb_layout "de"
 }
-input "13364:880:Keychron_Keychron_V7_Keyboard" {
+input "13364:880:Keychron_Keychron_V7" {
     xkb_layout "us"
 }
 
 # input 1386:890:Wacom_One_by_Wacom_S_Pen map_to_output HDMI-A-1
-exec otd-daemon
+# exec otd-daemon
 
 
 
@@ -87,7 +87,7 @@ exec otd-daemon
     bindsym $mod+Shift+c reload
 
     # Screenshot
-    bindsym $mod+p exec 'grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send -t 1100 -i /home/tufo/Pictures/Screenshots/"$(ls -t /home/tufo/Pictures/Screenshots | head -1)" "copied to clipboard" "$(ls -t /home/tufo/Pictures/Screenshots | head -1)" && wl-copy < home/tufo/Pictures/Screenshots/"$(ls -t /home/tufo/Pictures/Screenshots | head -1)"'
+    bindsym $mod+p exec 'grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send -t 1100 -i /home/tufo/Pictures/Screenshots/"$(ls -t /home/tufo/Pictures/Screenshots | head -1)" "copied to clipboard" "$(ls -t /home/tufo/Pictures/Screenshots | head -1)" && wl-copy < /home/tufo/Pictures/Screenshots/"$(ls -t /home/tufo/Pictures/Screenshots | head -1)"'
     bindsym $mod+Shift+p exec 'grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send -t 1100 -i /home/tufo/Pictures/Screenshots/"$(ls -t /home/tufo/Pictures/Screenshots | head -1)" "copied to clipboard" "$(ls -t /home/tufo/Pictures/Screenshots | head -1)" && wl-copy < /home/tufo/Pictures/Screenshots/"$(ls -t /home/tufo/Pictures/Screenshots | head -1)"'
 
 
