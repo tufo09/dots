@@ -101,7 +101,7 @@ exec otd-daemon
 
 
     # lock the system
-    set $lock swaylock -c 131313 -e -F -f --clock --effect-blur 40x5 --effect-greyscale -S
+    set $lock swaylock -c 131313 -e -F -f --clock --effect-blur 50x5 --effect-greyscale -S
     bindsym ctrl+shift+l exec $lock
     bindsym ctrl+shift+q exec $lock
 
