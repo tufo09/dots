@@ -103,7 +103,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
+zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+
 eval "$(starship init zsh)"
+
 source <(fzf --zsh)
 
 alias swaylockfx='swaylock -c 131313 -e -F -f --clock --effect-blur 40x5 --effect-greyscale -S'
