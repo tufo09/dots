@@ -237,7 +237,7 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
 
-    status_command while (echo "$(date +'%Y-%m-%d %:z %T ') bat: $(cat /sys/class/power_supply/BAT0/capacity_level) $(cat /sys/class/power_supply/BAT0/capacity)%");do sleep 5; done
+    status_command while (echo "audio: $(wpctl get-volume @DEFAULT_SINK@) I bat: $(cat /sys/class/power_supply/BAT0/status) $(cat /sys/class/power_supply/BAT0/capacity)% I $(date +'%Y-%m-%d %:z %T ')");do sleep 5; done
 
     colors {
         statusline #ffffff
