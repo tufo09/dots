@@ -93,11 +93,14 @@ input "13364:880:Keychron_Keychron_V7" {
 
     # raise the volume
     bindsym XF86AudioRaiseVolume exec 'wpctl set-volume @DEFAULT_SINK@ 10%+ && notify-send -a audiocontrol "volume +10%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001' 
-    bindsym Shift+XF86AudioRaiseVolume exec 'wpctl set-volume @DEFAULT_SINK@ 1%+ && notify-send -a audiocontrol "volume +1%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001' 
+    bindsym Shift+XF86AudioRaiseVolume exec 'wpctl set-volume @DEFAULT_SINK@ 1%+ && notify-send -a audiocontrol "volume +1%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001'
 
     # lower the volume
     bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_SINK@ 10%- && notify-send -a audiocontrol "volume -10%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001' 
-    bindsym Shift+XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_SINK@ 1%- && notify-send -a audiocontrol "volume -1%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001' 
+    bindsym Shift+XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_SINK@ 1%- && notify-send -a audiocontrol "volume -1%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001'
+
+    # mute and unmute the volume
+    bindsym XF86AudioMute exec 'wpctl set-mute @DEFAULT_SINK@ toggle && notify-send -a audiocontrol "mute toggle, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 900'
 
 
     # lock the system
