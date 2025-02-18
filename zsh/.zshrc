@@ -119,8 +119,8 @@ alias swaylockfx='swaylock -c 131313 -e -F -f --clock --effect-blur 40x5 --effec
 alias nvi='nvim $(fzf -m --preview="bat --color=always {}")'
 alias suspend='swaylockfx && systemctl suspend'
 
-alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"'
-alias mvr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"'
+alias rcp='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"'
+alias rmv='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"'
 
 # gpu monitoring tui
 alias gputop='nvtop'
