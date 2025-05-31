@@ -126,11 +126,8 @@ alias rmv='rsync --archive -hh --partial --info=stats1,progress2 --modify-window
 # gpu monitoring tui
 alias gputop='nvtop'
 
-<<<<<<< HEAD
-=======
 eval $(thefuck --alias)
 
->>>>>>> 0c884aa9a4879acbfb7f763356a753c799ca5c9e
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
