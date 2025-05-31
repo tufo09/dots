@@ -34,7 +34,7 @@ output eDP-1 scale 1
 
 # run a polkit authentification agent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 ### Input configuration
 #
@@ -232,13 +232,14 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    id 1
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
 
     status_command while (echo "audio: $(wpctl get-volume @DEFAULT_SINK@) I bat: $(cat /sys/class/power_supply/BAT0/status) $(cat /sys/class/power_supply/BAT0/capacity)% I $(date +'%Y-%m-%d %:z %T ')");do sleep 5; done
-
+    # mode hide
     colors {
         statusline #ffffff
         background #323232
