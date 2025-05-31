@@ -118,9 +118,16 @@ source <(fzf --zsh)
 alias swaylockfx='swaylock -c 131313 -e -F -f --clock --effect-blur 40x5 --effect-greyscale -S'
 alias nvi='nvim $(fzf -m --preview="bat --color=always {}")'
 alias suspend='swaylockfx && systemctl suspend'
+alias dks='killall -9 dunst ; notify-send startupdunst'
 
 alias rcp='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"'
 alias rmv='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"'
 
 # gpu monitoring tui
 alias gputop='nvtop'
+
+eval $(thefuck --alias)
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

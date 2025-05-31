@@ -66,7 +66,7 @@ input "13364:880:Keychron_Keychron_V7" {
 # Basics:
 #
     # Start a terminal
-    set $term alacritty
+    set $term ghostty
     bindsym $mod+x exec $term
 
     # Kill focused window
@@ -92,11 +92,11 @@ input "13364:880:Keychron_Keychron_V7" {
 
 
     # raise the volume
-    bindsym XF86AudioRaiseVolume exec 'wpctl set-volume @DEFAULT_SINK@ 10%+ && notify-send -a audiocontrol "volume +10%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001' 
+    bindsym XF86AudioRaiseVolume exec 'wpctl set-volume @DEFAULT_SINK@ 10%+ && notify-send -a audiocontrol "volume +10%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001'
     bindsym Shift+XF86AudioRaiseVolume exec 'wpctl set-volume @DEFAULT_SINK@ 1%+ && notify-send -a audiocontrol "volume +1%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001'
 
     # lower the volume
-    bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_SINK@ 10%- && notify-send -a audiocontrol "volume -10%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001' 
+    bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_SINK@ 10%- && notify-send -a audiocontrol "volume -10%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001'
     bindsym Shift+XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_SINK@ 1%- && notify-send -a audiocontrol "volume -1%, currently $(wpctl get-volume @DEFAULT_SINK@)" -t 1800 -r 9001'
 
     # mute and unmute the volume
@@ -104,7 +104,7 @@ input "13364:880:Keychron_Keychron_V7" {
 
 
     # lock the system
-    set $lock swaylock -c 131313 -e -F -f --clock --effect-blur 50x5 --effect-greyscale -S
+    set $lock swaylock -c $(hexdump -n 3 -v -e '"#" 3/1 "%02X"' /dev/urandom)
     bindsym ctrl+shift+l exec $lock
     bindsym ctrl+shift+q exec $lock
 
@@ -232,13 +232,14 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    id 1
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
 
     status_command while (echo "audio: $(wpctl get-volume @DEFAULT_SINK@) I bat: $(cat /sys/class/power_supply/BAT0/status) $(cat /sys/class/power_supply/BAT0/capacity)% I $(date +'%Y-%m-%d %:z %T ')");do sleep 5; done
-
+    # mode hide
     colors {
         statusline #ffffff
         background #323232
