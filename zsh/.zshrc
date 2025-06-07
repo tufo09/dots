@@ -123,6 +123,9 @@ alias dks='killall -9 dunst ; notify-send startupdunst'
 alias rcp='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"'
 alias rmv='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"'
 
+# discord moonlight mod
+alias moonlight='.local/share/Discord/Discord'
+
 # gpu monitoring tui
 alias gputop='nvtop'
 
@@ -131,3 +134,5 @@ eval $(thefuck --alias)
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+export PATH=$PATH:/home/tufo/.spicetify
