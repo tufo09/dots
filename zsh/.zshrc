@@ -126,6 +126,9 @@ alias rmv='rsync --archive -hh --partial --info=stats1,progress2 --modify-window
 # discord moonlight mod
 alias moonlight='.local/share/Discord/Discord'
 
+# spotify
+alias spotify='spicetify auto'
+
 # gpu monitoring tui
 alias gputop='nvtop'
 
