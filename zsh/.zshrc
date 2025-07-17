@@ -139,3 +139,4 @@ eval $(thefuck --alias)
 eval "$(atuin init zsh)"
 
 export PATH=$PATH:/home/tufo/.spicetify
+export _JAVA_AWT_WM_NONREPARENTING=1
